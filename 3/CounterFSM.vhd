@@ -89,18 +89,8 @@ begin
                 if CurrentState = Cnt1Count then
                     -- Increment Cnt1
                     if r_Cnt1 >= unsigned(i_Cnt1_lim_up) then
-                        -- If limit reached, the FSM *will* transition next cycle.
-                        -- We can hold, reset, or wrap. 
-                        -- Per requirement "Set state to Cnt2... Reset Cnt1".
-                        -- The reset happens naturally when CurrentState becomes Cnt2Count (see 'else' block).
-                        -- So here we just increment or hold? 
-                        -- Let's allow it to hit the limit value exactly (>= check covers it).
-                        -- If we increment here, it might go Limit+1 for one cycle before transition.
-                        -- Usually "Count to Limit" implies it reaches Limit, then Reset.
-                        
-                        -- To ensure CLEAN reset on transition, we rely on the logic below (Active Cnt2 -> Reset Cnt1).
-                        -- Just increment.
-                        r_Cnt1 <= r_Cnt1 + 1;
+                        -- Limit reached. Reset immediately so next cycle is 0.
+                        r_Cnt1 <= (others => '0');
                     else
                          r_Cnt1 <= r_Cnt1 + 1;
                     end if;
@@ -109,7 +99,7 @@ begin
                     
                 elsif CurrentState = Cnt2Count then
                     if r_Cnt2 >= unsigned(i_Cnt2_lim_up) then
-                         r_Cnt2 <= r_Cnt2 + 1;
+                         r_Cnt2 <= (others => '0');
                     else
                          r_Cnt2 <= r_Cnt2 + 1;
                     end if;
