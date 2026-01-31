@@ -17,7 +17,8 @@ architecture Behavioral of CounterFSM_tb is
             i_Cnt1_lim_up: in  STD_LOGIC_VECTOR(7 downto 0);
             i_Cnt2_lim_up: in  STD_LOGIC_VECTOR(7 downto 0);
             o_Cnt1_q     : out STD_LOGIC_VECTOR(7 downto 0);
-            o_Cnt2_q     : out STD_LOGIC_VECTOR(7 downto 0)
+            o_Cnt2_q     : out STD_LOGIC_VECTOR(7 downto 0);
+            o_state      : out STD_LOGIC_VECTOR(1 downto 0)
         );
     end component;
 
@@ -31,6 +32,7 @@ architecture Behavioral of CounterFSM_tb is
     -- Outputs
     signal o_Cnt1_q      : STD_LOGIC_VECTOR(7 downto 0);
     signal o_Cnt2_q      : STD_LOGIC_VECTOR(7 downto 0);
+    signal o_state       : STD_LOGIC_VECTOR(1 downto 0);
 
     -- Clock period definitions
     constant i_clk_period : time := 10 ns;
@@ -45,7 +47,8 @@ begin
         i_Cnt1_lim_up => i_Cnt1_lim_up,
         i_Cnt2_lim_up => i_Cnt2_lim_up,
         o_Cnt1_q      => o_Cnt1_q,
-        o_Cnt2_q      => o_Cnt2_q
+        o_Cnt2_q      => o_Cnt2_q,
+        o_state       => o_state
     );
 
     -- Clock process definitions

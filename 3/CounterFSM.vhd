@@ -7,10 +7,11 @@ entity CounterFSM is
         i_clk        : in  STD_LOGIC;
         i_rst        : in  STD_LOGIC;
         i_en         : in  STD_LOGIC;
-        i_Cnt1_lim_up: in  STD_LOGIC_VECTOR(7 downto 0); -- Changed to 8-bit Vector
-        i_Cnt2_lim_up: in  STD_LOGIC_VECTOR(7 downto 0); -- Changed to 8-bit Vector
+        i_Cnt1_lim_up: in  STD_LOGIC_VECTOR(7 downto 0);
+        i_Cnt2_lim_up: in  STD_LOGIC_VECTOR(7 downto 0);
         o_Cnt1_q     : out STD_LOGIC_VECTOR(7 downto 0);
-        o_Cnt2_q     : out STD_LOGIC_VECTOR(7 downto 0)
+        o_Cnt2_q     : out STD_LOGIC_VECTOR(7 downto 0);
+        o_state      : out STD_LOGIC_VECTOR(1 downto 0) -- 00:Idle, 01:Cnt1, 10:Cnt2
     );
 end CounterFSM;
 
@@ -31,8 +32,6 @@ begin
             CurrentState <= Idle;
         elsif rising_edge(i_clk) then
             if i_en = '0' then
-                -- Global Idle override: If i_en is 0, force Idle state
-                -- This satisfies "When i_en triggers set state to idle" (interpreted as Disable)
                 CurrentState <= Idle;
             else
                 CurrentState <= NextState;
@@ -47,9 +46,6 @@ begin
         
         case CurrentState is
             when Idle =>
-                -- Wait for Enable (handled by State Register, effectively)
-                -- If i_en='1' (and not overridden), we start.
-                -- Since State Register forces Idle if en=0, here we just say:
                 if i_en = '1' then
                     NextState <= Cnt1Count;
                 else
@@ -57,13 +53,11 @@ begin
                 end if;
 
             when Cnt1Count =>
-                -- Check against 8-bit limit
                 if r_Cnt1 >= unsigned(i_Cnt1_lim_up) then
                     NextState <= Cnt2Count;
                 end if;
 
             when Cnt2Count =>
-                -- Check against 8-bit limit
                 if r_Cnt2 >= unsigned(i_Cnt2_lim_up) then
                     NextState <= Cnt1Count;
                 end if;
@@ -80,31 +74,29 @@ begin
             r_Cnt1 <= (others => '0');
             r_Cnt2 <= (others => '0');
         elsif rising_edge(i_clk) then
-            -- Check for Global Disable/Idle Reset
             if i_en = '0' or CurrentState = Idle then 
                 r_Cnt1 <= (others => '0');
                 r_Cnt2 <= (others => '0');
             else
                 -- Active Counter Logic
                 if CurrentState = Cnt1Count then
-                    -- Increment Cnt1
+                    -- FIX: Reset immediately when limit is reached to prevent counting to Limit+1
                     if r_Cnt1 >= unsigned(i_Cnt1_lim_up) then
-                        -- Limit reached. Reset immediately so next cycle is 0.
                         r_Cnt1 <= (others => '0');
+                        r_Cnt2 <= to_unsigned(1, 8); -- Start Cnt2 immediately
                     else
                          r_Cnt1 <= r_Cnt1 + 1;
+                         r_Cnt2 <= (others => '0');
                     end if;
-                    
-                    r_Cnt2 <= (others => '0');
                     
                 elsif CurrentState = Cnt2Count then
                     if r_Cnt2 >= unsigned(i_Cnt2_lim_up) then
                          r_Cnt2 <= (others => '0');
+                         r_Cnt1 <= to_unsigned(1, 8); -- Start Cnt1 immediately
                     else
                          r_Cnt2 <= r_Cnt2 + 1;
+                         r_Cnt1 <= (others => '0');
                     end if;
-                    
-                    r_Cnt1 <= (others => '0');
                 else
                     r_Cnt1 <= (others => '0');
                     r_Cnt2 <= (others => '0');
@@ -116,5 +108,16 @@ begin
     -- Output Assignments
     o_Cnt1_q <= STD_LOGIC_VECTOR(r_Cnt1);
     o_Cnt2_q <= STD_LOGIC_VECTOR(r_Cnt2);
+    
+    -- State Encoding
+    process(CurrentState)
+    begin
+        case CurrentState is
+            when Idle      => o_state <= "00";
+            when Cnt1Count => o_state <= "01";
+            when Cnt2Count => o_state <= "10";
+            when others    => o_state <= "00";
+        end case;
+    end process;
 
 end Behavioral;
