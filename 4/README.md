@@ -27,6 +27,9 @@
 ### 動作順序規劃 (AOV)
 ![AOV](img/AOV.png)
 
+### 訊息序列圖 (MSC)
+![MSC](img/MSC.png)
+
 ## 狀態機設計 (FSM)
 
 系統的核心邏輯由三個主要狀態組成：`Idle`、`Cnt1Count`、`Cnt2Count`。
@@ -41,17 +44,14 @@
 
 ### 動態占空比模擬
 在測試平台 (`PWM_tb.vhd`) 中，我們實作了動態占空比模擬變數 `r_DutyCycle`。如下圖所示，PWM 的高電位寬度會隨著計數周期逐漸增加：
+![模擬結果原圖](img/模擬結果(原圖).png)
 
-![模擬結果](img/%E6%A8%A1%E6%93%AC%E7%B5%90%E6%9E%9C.png)
+>**[!NOTE]**
+>上圖可以發現o_Pwmout的工作週期慢慢上升。
 
 ### 計數器切換細節
 下圖展示了 Cnt1 與 Cnt2 之間的精準切換邏輯：
 ![CNT2 counting](img/CNT2%20counting(%E6%9C%89%E6%A8%99%E7%A4%BA).png)
 
-## 檔案清單
-- `PWM.vhd`: PWM 主核心程式。
-- `PWM_tb.vhd`: 具備動態占空比測試邏輯的 Testbench。
-- `img/`: 包含所有設計圖檔與模擬截圖。
-
----
-*本專案由專業程式工程師開發，遵循 VHDL 標準規範與雙駝峰命名法。*
+>**[!NOTE]**
+>上圖可以發現o_Cnt2_q2的數字正在增加，表示Cnt2正在計數，且o_Pwmout輸出為高電位(1)。
