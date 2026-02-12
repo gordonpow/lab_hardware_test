@@ -37,10 +37,11 @@
 透過 VHDL Testbench 進行驗證，確保計數器在切換點時能夠無縫銜接，並且在達到上限後正確重置並觸發下一個狀態。
 
 ### 模擬波形圖
+![模擬結果](img/模擬結果(原圖).png)
 ![模擬結果](img/模擬結果.png)
 
 > [!NOTE]
-> 模擬結果顯示，計數器在切換瞬間 (`CurrentState` 改變時)，下一個計數器會立即從 1 開始計數，確保計時精確性。
+> 紅色方框為idle狀態，綠色方框為cnt1count狀態，黃色方框為cnt2count狀態。
 
 ---
 
@@ -57,10 +58,4 @@
 | `o_Cnt2_q`      | 輸出 | STD_LOGIC_VECTOR(7:0) | 計數器 2 目標輸出                        |
 | `o_state`       | 輸出 | STD_LOGIC_VECTOR(1:0) | 當前狀態編碼 (00:Idle, 01:Cnt1, 10:Cnt2) |
 
----
 
-## 快速開始
-
-1. 使用 Vivado 或 Quartus 開啟專案。
-2. 將 `CounterFSM.vhd` 加入來源檔案。
-3. 執行 `CounterFSM_tb.vhd` 進行模擬驗證。
