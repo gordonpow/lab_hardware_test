@@ -21,6 +21,7 @@ signal scoreL : STD_LOGIC_VECTOR (3 downto 0);
 signal scoreR : STD_LOGIC_VECTOR (3 downto 0);
 
 signal slow_clk : STD_LOGIC;
+
     signal CounterVal : integer range 0 to 255 := 0;
     signal SpeedLimit : integer range 0 to 255 := 3;
     signal LfsrReg : std_logic_vector(7 downto 0) := "10111101";
