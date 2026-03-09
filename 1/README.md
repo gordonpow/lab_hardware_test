@@ -55,8 +55,9 @@
 ![Result Showcase](img/成果展示.png)
 > * **黃色方框** : Reset階段 rst_tb = '1'
 > * **藍色方框** : up_down_tb = '1'時的計數結果
-> * **紅色方框** : up_down_tb = '0'時的計數結果
+> * **紫色方框** : up_down_tb = '0'時的計數結果
 
-
+### 實機測試結果
+[![Result On Board](https://img.youtube.com/vi/_x_9Ky2avpY/0.jpg)](https://youtube.com/shorts/_x_9Ky2avpY)
 
 

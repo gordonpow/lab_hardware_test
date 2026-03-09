@@ -50,13 +50,15 @@ begin
     begin
         if i_rst = '1' then
             DivCounter <= (others => '0');
+            Clk_2Hz <= '0';
         elsif rising_edge(i_clk) then
             DivCounter <= DivCounter + 1;
+            Clk_2Hz <= DivCounter(25);
         end if;
     end process;
 
     -- 擷取特定位元作為慢時脈 (100MHz 取 25 位元大約是 1.5Hz)
-    Clk_2Hz <= DivCounter(25);
+    
 
     -- 控制 LedCounter (數值計數)
     process(Clk_2Hz, i_rst)
