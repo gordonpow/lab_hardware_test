@@ -47,15 +47,22 @@
 
 ## 腳位定義 (Pin Assignment)
 
-| 腳位名稱        | 屬性 | 類型                  | 描述                                     |
-| :-------------- | :--- | :-------------------- | :--------------------------------------- |
-| `i_clk`         | 輸入 | STD_LOGIC             | 系統時鐘                                 |
-| `i_rst`         | 輸入 | STD_LOGIC             | 非同步重設 (高電位觸發)                  |
-| `i_en`          | 輸入 | STD_LOGIC             | 系統啟用 (High: 運作, Low: 返回 Idle)    |
-| `i_Cnt1_lim_up` | 輸入 | STD_LOGIC_VECTOR(7:0) | 計數器 1 計數上限                        |
-| `i_Cnt2_lim_up` | 輸入 | STD_LOGIC_VECTOR(7:0) | 計數器 2 計數上限                        |
-| `o_Cnt1_q`      | 輸出 | STD_LOGIC_VECTOR(7:0) | 計數器 1 目標輸出                        |
-| `o_Cnt2_q`      | 輸出 | STD_LOGIC_VECTOR(7:0) | 計數器 2 目標輸出                        |
-| `o_state`       | 輸出 | STD_LOGIC_VECTOR(1:0) | 當前狀態編碼 (00:Idle, 01:Cnt1, 10:Cnt2) |
 
 
+| 腳位名稱        | 屬性 | 類型                  | 描述                                  |
+| :-------------- | :--- | :-------------------- | :------------------------------------ |
+| `i_clk`         | 輸入 | STD_LOGIC             | 系統時鐘                              |
+| `i_rst`         | 輸入 | STD_LOGIC             | 非同步重設 (高電位觸發)               |
+| `i_en`          | 輸入 | STD_LOGIC             | 系統啟用 (High: 運作, Low: 返回 Idle) |
+| `i_Cnt1_lim_up` | 輸入 | STD_LOGIC_VECTOR(7:0) | 計數器 1 計數上限                     |
+| `i_Cnt2_lim_up` | 輸入 | STD_LOGIC_VECTOR(7:0) | 計數器 2 計數上限                     |
+| `o_Cnt1_q`      | 輸出 | STD_LOGIC_VECTOR(7:0) | 計數器 1 目標輸出                     |
+| `o_Cnt2_q`      | 輸出 | STD_LOGIC_VECTOR(7:0) | 計數器 2 目標輸出                     |
+
+---
+
+## 實體展示影片
+![各腳位定義](img/各腳位定義.png)
+[![實體影片展示](https://img.youtube.com/vi/OaIi-Avemmg/0.jpg)](https://youtu.be/OaIi-Avemmg)
+> [!NOTE]
+> 我的i_cnt1_lim_up 固定設為"1111"因為按鍵不夠用，所以就直接在程式碼裡面寫死

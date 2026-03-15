@@ -50,4 +50,13 @@
 * 黃色方框 :黃色方框為上數模式,cnt1_q與cnt_2q會上數至上限值(cnt1_lim_up/cnt2_lim_up)再重新設定為下限值(cnt1_lim_down/cnt2_lim_down)。
 * 藍色方框 :藍色方框為下數模式,cnt1_q與cnt_2q會下數至下限值(cnt1_lim_down/cnt2_lim_down)再重新設定為上限值(cnt1_lim_up/cnt2_lim_up)
 ---
+
+## 腳位定義 (Pin Definitions)
+![腳位定義](img/各按鈕定義.jpg)
+
+## 實機成果 (Hardware Demonstration)
+觀看實機運作影片：[實機影片](https://youtube.com/shorts/0C9kvJFxDY0?feature=share)
+
+---
 **Note**: Source defined in `DualCounters_Top.vhd` and `ConfigurableCounter.vhd`. Testbench is provided in `Testbench.vhd`.
+****
