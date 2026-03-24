@@ -85,9 +85,10 @@ ModelSim 或 Vivado 模擬產生的波形圖。
 > - **藍色方框** : 左球員發球
 > - **橙色方框** : 右球員提前擊球
 
+---
 
+## 實機展示
 
+[![實機展示](https://img.youtube.com/vi/CoajZzvFxZo/0.jpg)](https://youtube.com/shorts/CoajZzvFxZo)
 
-
-
-
+> 點擊圖片觀看 YouTube 實機展示影片
