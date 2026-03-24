@@ -8,7 +8,7 @@
 ## 設計文件與圖示
 
 
-### 系統架構圖
+### 1.架構圖
 描述專案的整體模組設計與訊號連接。
 
 ![架構圖](./img/架構圖.png)
@@ -20,7 +20,7 @@
 > - **Score_R_p**: 紀錄右球員分數。
 ---
 
-### Break Down
+### 2.Break Down
 將專案功能拆解為各個子模組或處理程序。
 
 ![Break Down](./img/BreakDown.png)
@@ -31,21 +31,21 @@
 > - **Lwin**:左球員得分
 ---
 
-### 有限狀態機 (FSM)
+### 3.FSM
 描述遊戲邏輯的狀態轉換，包含移動、得分與發球狀態。
 
 ![有限狀態機](./img/FSM.png)
 
 ---
 
-### 非週期操作 (AOV)
+### 4.AOV
 描述異步操作或特定事件的觸發邏輯。
 
 ![非週期操作](./img/AOV.png)
 
 ---
 
-### 訊息序列圖 (MSC)
+### 5.MSC
 描述各組件間的溝通與時序關係。
 
 ![訊息序列圖](./img/MSC.png)
@@ -73,6 +73,9 @@ ModelSim 或 Vivado 模擬產生的波形圖。
 > - **灰色方框** : 右球員擊球
 > - **黃色方框** : 右球員漏接
 
+---
 
+## 實機展示
 
+[![實機展示影片](https://img.youtube.com/vi/o6TW9HDYMb0/0.jpg)](https://youtube.com/shorts/o6TW9HDYMb0?feature=share)
 

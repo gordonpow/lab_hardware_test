@@ -22,7 +22,7 @@ end PWM;
 architecture Behavioral of PWM is
 
   type StateType is (Idle, Cnt1Count, Cnt2Count);
-  signal CurrentState, NextState : StateType;
+  signal CurrentState : StateType;
 
   signal r_Cnt1 : UNSIGNED(7 downto 0);
   signal r_Cnt2 : UNSIGNED(7 downto 0);
@@ -31,21 +31,17 @@ architecture Behavioral of PWM is
   signal i_Cnt2_lim_up : UNSIGNED(7 downto 0);
 begin
 
-  process (i_Period, i_Duty)
+  Conversion :process (i_Period, i_Duty)
   begin
-    -- Cnt2 �t�d���q��A�ҥH�����W�������N�O i_Duty
     i_Cnt2_lim_up <= unsigned(i_Duty) - 1;
-
-    -- Cnt1 �t�d�C�q��A�W���O (�`�� - ���q���)
-    -- [���b����]�G�T�O�`�� >= ���q��ơA�קK�L���Ƭ۴�o�ͷ���(Underflow)�ܦ��W�j�Ʀr
     if unsigned(i_Period) >= unsigned(i_Duty) then
       i_Cnt1_lim_up <= unsigned(i_Period) - unsigned(i_Duty);
     else
-      i_Cnt1_lim_up <= (others => '0'); -- �p�G�]�w���~(Duty>Period)�A�C�q��ɶ������]�� 0
+      i_Cnt1_lim_up <= (others => '0');
     end if;
   end process;
 
-  -- State Register Process
+  -- State Transition Process
   process (i_clk, i_rst)
   begin
     if i_rst = '1' then
@@ -54,37 +50,27 @@ begin
       if i_en = '0' then
         CurrentState <= Idle;
       else
-        CurrentState <= NextState;
+        case CurrentState is
+          when Idle =>
+            if i_en = '1' then
+              CurrentState <= Cnt1Count;
+            end if;
+
+          when Cnt1Count =>
+            if r_Cnt1 >= unsigned(i_Cnt1_lim_up) then
+              CurrentState <= Cnt2Count;
+            end if;
+
+          when Cnt2Count =>
+            if r_Cnt2 >= unsigned(i_Cnt2_lim_up) then
+              CurrentState <= Cnt1Count;
+            end if;
+
+          when others =>
+            CurrentState <= Idle;
+        end case;
       end if;
     end if;
-  end process;
-
-  -- Next State Logic
-  process (CurrentState, i_en, i_Cnt1_lim_up, i_Cnt2_lim_up, r_Cnt1, r_Cnt2)
-  begin
-    NextState <= CurrentState;
-
-    case CurrentState is
-      when Idle =>
-        if i_en = '1' then
-          NextState <= Cnt1Count;
-        else
-          NextState <= Idle;
-        end if;
-
-      when Cnt1Count =>
-        if r_Cnt1 >= unsigned(i_Cnt1_lim_up) then
-          NextState <= Cnt2Count;
-        end if;
-
-      when Cnt2Count =>
-        if r_Cnt2 >= unsigned(i_Cnt2_lim_up) then
-          NextState <= Cnt1Count;
-        end if;
-
-      when others =>
-        NextState <= Idle;
-    end case;
   end process;
 
   -- Counter Logic Process
