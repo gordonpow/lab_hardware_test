@@ -12,6 +12,20 @@
     - 支援上下數模式切換 (`i_up_down`)：`1` 為上數，`0` 為下數。
     - 支援動態設定計數上下限 (`i_limit_upper`, `i_limit_lower`)。
 
+## 邏輯設計與流程 (Logic Design & Flow)
+
+### 1.Breakdown
+![BreakDown](img/BreakDown.png)
+
+### 2.FSM
+![FSM](img/FSM.png)
+
+### 3.MSC
+![MSC](img/MSC.png)
+
+### 4.AOV
+![AOV](img/AOV.png)
+
 ## 系統架構 (System Architecture)
 ![系統架構圖](img/架構圖.png)
 
@@ -24,22 +38,8 @@
 - **輸入 (Inputs)**: `i_clk`, `i_res`, `i_en`, `i_load`, `i_up_down`, `i_d`, `i_limit_upper`, `i_limit_lower`
 - **輸出 (Outputs)**: `o_q`
 
-### DualCounters_Top
+### System_Top
 頂層模組，將兩個 `ConfigurableCounter` 封裝，並提供獨立的控制介面。
-
-## 邏輯設計與流程 (Logic Design & Flow)
-
-### 有限狀態機 (FSM)
-![FSM](img/FSM.png)
-
-### 訊號流程 (Flow Breakdown)
-![BreakDown](img/BreakDown.png)
-
-### 活動圖 (Activity on Vertex - AOV)
-![AOV](img/AOV.png)
-
-### 訊息序列圖 (Message Sequence Chart - MSC)
-![MSC](img/MSC.png)
 
 ## 模擬結果 (Simulation Results)
 ![模擬波形圖](img/成果展示(原圖).png)
@@ -55,7 +55,9 @@
 ![腳位定義](img/各按鈕定義.jpg)
 
 ## 實機成果 (Hardware Demonstration)
-觀看實機運作影片：[實機影片](https://youtube.com/shorts/0C9kvJFxDY0?feature=share)
+觀看實機運作影片：
+
+[![實機影片](https://img.youtube.com/vi/0C9kvJFxDY0/0.jpg)](https://youtube.com/shorts/0C9kvJFxDY0?feature=share)
 
 ---
 **Note**: Source defined in `DualCounters_Top.vhd` and `ConfigurableCounter.vhd`. Testbench is provided in `Testbench.vhd`.
