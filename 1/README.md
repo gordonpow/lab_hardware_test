@@ -24,25 +24,29 @@
 
 以下是本專案的系統設計圖表，從功能分解到詳細的狀態機設計。
 
-### 1. 功能分解圖 (Break Down Structure)
+### 1.Break Down
 展示了計數器的輸入、輸出以及內部邏輯模組的階層結構。
 
 ![Break Down Structure](img/BreakDown.png)
 
-### 2. 有限狀態機 (FSM - Finite State Machine)
+### 2. FSM
 描述了計數器在 0 到 9 之間的狀態轉換邏輯。綠色箭頭代表上數，紅色虛線代表下數。
 
 ![Finite State Machine](img/FSM.png)
 
-### 3. 訊息序列圖 (MSC - Message Sequence Chart)
+### 3. MSC
 顯示了 Testbench 與 Counter (DUT) 之間的信號交互時序。包含 Reset、計數開始與方向切換的過程。
 
 ![Message Sequence Chart](img/MSC.png)
 
-### 4. 演算法流程圖 (AOV - Activity On Vertex)
+### 4. AOV
 詳細描述了每一個時脈週期 (Clock Cycle) 內的邏輯判斷流程，包含上數/下數檢查與溢位處理 (Wrap-around)。
 
 ![Activity On Vertex](img/AOV.png)
+
+### 5. 架構圖
+
+![Activity On Vertex](img/架構圖.png)
 
 ---
 
