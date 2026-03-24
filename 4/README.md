@@ -68,4 +68,4 @@
 ## 成果展示
 
 完整的實際運作成果影片，請觀看以下 YouTube 連結：
-[PWM 呼吸燈成果影片](https://youtu.be/Z48vqUHPfIA)
+[![PWM 呼吸燈成果影片](https://img.youtube.com/vi/Z48vqUHPfIA/0.jpg)](https://youtu.be/Z48vqUHPfIA)
