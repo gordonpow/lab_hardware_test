@@ -75,6 +75,12 @@ ModelSim 或 Vivado 模擬產生的波形圖。
 
 ---
 
+## 各腳位定義
+
+![各腳位定義](./img/各腳位定義.png)
+
+---
+
 ## 實機展示
 
 [![實機展示影片](https://img.youtube.com/vi/o6TW9HDYMb0/0.jpg)](https://youtube.com/shorts/o6TW9HDYMb0?feature=share)

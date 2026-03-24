@@ -17,7 +17,7 @@
     - `i_Cnt1_lim_up` / `i_Cnt2_lim_up`: 計數上限設定
     - `o_Pwmout`: PWM 訊號輸出
 
-![各腳位定義](img/%E5%90%84%E8%85%B3%E4%BD%8D%E5%AE%9A%E7%BE%A9.png)
+
 
 ## 邏輯拆解與分析
 
@@ -66,6 +66,6 @@
 > 上圖可以發現o_Pwmout的工作週期慢慢上升又慢慢下降。
 
 ## 成果展示
-
+![各腳位定義](img/%E5%90%84%E8%85%B3%E4%BD%8D%E5%AE%9A%E7%BE%A9.png)
 完整的實際運作成果影片，請觀看以下 YouTube 連結：
 [![PWM 呼吸燈成果影片](https://img.youtube.com/vi/Z48vqUHPfIA/0.jpg)](https://youtu.be/Z48vqUHPfIA)
