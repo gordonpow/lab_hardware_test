@@ -43,25 +43,27 @@
 
 系統採用元件化設計，各模組的架構與其內部 Process 用途如下：
 
+### Top 模組架構說明
 ![架構圖](img/架構圖TOP.png)
 > [!NOTE] 
-> **Top 模組架構說明**
-> 1. **Speed_control Process**：負責偵測實體按鈕輸入 (`i_speed_up`, `i_speed_down`)，並動態調整控制呼吸節奏的 `FlashSpeed` 常數。
-> 2. **Dynamic Duty Process**：負責產生動態的工作週期變數 (`LoopCnt`)，利用來回掃描 (0~254) 模擬呼吸燈漸亮漸暗。
-> 3. **元件連接 (Port Map)**：整合並連接底層的 `Clock_Divider` 與 `PWM` 模組。
+> 
+> 1. **Speed_control**：負責偵測實體按鈕輸入 (`i_speed_up`, `i_speed_down`)，並動態調整控制呼吸節奏的 `FlashSpeed` 常數。
+> 2. **元件連接 (Port Map)**：整合並連接底層的 `Clock_Divider` 與 `PWM` 模組。
 
+### PWM 核心模組架構說明
 ![架構圖](img/架構圖PWM.png)
 > [!NOTE]
-> **PWM 核心模組架構說明**
-> 1. **Conversion Process**：根據外部輸入的 `i_Period` 和計算得到的動態 `i_Duty`，換算出計數器所需的正確計數上限。
-> 2. **State Transition Process**：管理有限狀態機 (FSM) 的狀態切換 (`Idle`, `Cnt1Count`, `Cnt2Count`)。
-> 3. **Counter Logic Process**：負責底層實體時鐘計數器 (`r_Cnt1`, `r_Cnt2`) 的累加邏輯。
-> 4. **Output Process**：依照當下狀態輸出真正的 `o_Pwmout` 亮暗硬體訊號。
+> 
+> 1. **Conversion**：根據外部輸入的 `i_Period` 和計算得到的動態 `i_Duty`，換算出計數器所需的正確計數上限。
+> 2. **FSM**：管理有限狀態機 (FSM) 的狀態切換 (`Idle`, `Cnt1Count`, `Cnt2Count`)。
+> 3. **Counter**：負責底層實體時鐘計數器 (`r_Cnt1`, `r_Cnt2`) 的累加邏輯。
+> 4. **Output**：依照當下狀態輸出真正的 `o_Pwmout` 亮暗硬體訊號。
 
+### Clock_Divider 除頻器架構說明
 ![架構圖](img/架構圖Clock_Divider.png)
 > [!NOTE]
-> **Clock_Divider 除頻器架構說明**
-> 1. **除頻 Process**：負責將系統高頻時脈 (100MHz) 計數與降頻，輸出供底層 PWM 運行的基準時脈 (1kHz)。
+> 
+> 1. **div_clk**：負責將系統高頻時脈 (100MHz) 計數與降頻，輸出供底層 PWM 運行的基準時脈 (1kHz)。
 
 ## 模擬驗證
 
