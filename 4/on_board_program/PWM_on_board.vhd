@@ -42,7 +42,7 @@ begin
   end process;
 
   -- State Transition Process
-  process (i_clk, i_rst)
+  FSM :process (i_clk, i_rst)
   begin
     if i_rst = '1' then
       CurrentState <= Idle;
@@ -74,7 +74,7 @@ begin
   end process;
 
   -- Counter Logic Process
-  process (i_clk, i_rst)
+  Counter :process (i_clk, i_rst)
   begin
     if i_rst = '1' then
       r_Cnt1 <= (others => '0');
@@ -115,7 +115,7 @@ begin
   o_Cnt1_q <= std_logic_vector(r_Cnt1);
   o_Cnt2_q <= std_logic_vector(r_Cnt2);
 
-  process (CurrentState)
+  Output :process (CurrentState)
   begin
     if CurrentState = Cnt2Count then
       o_Pwmout <= '1';

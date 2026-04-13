@@ -18,8 +18,7 @@ architecture Behavioral of Clock_Divider is
   signal DivCounter : unsigned(25 downto 0) := (others => '0');
 
 begin
-  -- ���� DivCounter (���W�p�ưʧ@)
-  process (i_clk, i_rst)
+  div_clk : process (i_clk, i_rst)
   begin
     if i_rst = '1' then
       DivCounter <= (others => '0');
