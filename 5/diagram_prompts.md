@@ -1,8 +1,21 @@
 # Hardware Diagram Generation Prompts (Universal Templates)
 
-This document contains universal prompts designed to guide an AI assistant (such as an LLM) to generate Draw.io XML codes and Timing Diagram JSON configurations from arbitrary hardware structures, state machines, or signal definitions.
+## README.md Requirements / README.md 內容須包含以下
+1. 專題介紹
+2. 需求定義
+3. Breakdown
+4. 架構圖
+5. FSM 狀態轉移圖
+6. MSC 圖
+7. AOV 圖
+8. 如何驗證
+9. 成果展示
 
-All prompts in this document are written entirely in English to prevent Protobuf character encoding errors (invalid UTF-8) during API streaming transmission, and to ensure maximum compatibility and parsing accuracy.
+---
+
+## Drawing and Folder Rules / 繪圖與資料夾規範
+* 畫圖可以依照以下提示詞畫。
+* 圖檔與圖片編輯檔需新增一個 img 資料夾並放入。
 
 ---
 
