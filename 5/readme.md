@@ -68,7 +68,7 @@ Breakdown 圖用於展示系統各個子功能與狀態機的階層拆解：
 
 ![架構圖](./img/架構圖.png)
 
-*(原始編輯檔請參考 [架構圖.drawio](file:///c:/pytorch_project/hardware_test/5/img/%E6%9E%B6%E6%A7%8B%E5%9C%96.drawio))*
+*(原始編輯檔請參考 [架構圖.drawio](file:///c:/pytorch_project/hardware_test/5/img/架構圖.drawio))*
 
 ---
 
