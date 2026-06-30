@@ -1,0 +1,111 @@
+{
+  "name": "VGA Display Timing Chart",
+  "total_cycles": 10,
+  "cycle_width": 30,
+  "signals": [
+    {
+      "name": "v_pClk_w",
+      "type": "CLK",
+      "color": "#43f477",
+      "values": ["0", "1", "0", "1", "0", "1", "0", "1", "0", "1"],
+      "bits": 1,
+      "clk_rising_edge": true,
+      "clk_mod": 1,
+      "pinned": false,
+      "sticky": false,
+      "input_base": 10,
+      "display_base": 10
+    },
+    {
+      "name": "i_rst_r",
+      "type": "INPUT",
+      "color": "#414bcc",
+      "values": ["1", "1", "0", "0", "0", "0", "0", "0", "0", "0"],
+      "bits": 1,
+      "clk_rising_edge": true,
+      "clk_mod": 1,
+      "pinned": false,
+      "sticky": false,
+      "input_base": 10,
+      "display_base": 10
+    },
+    {
+      "name": "v_pixelX_w",
+      "type": "BUS_DATA",
+      "color": "#c94cfb",
+      "values": ["0", "0", "191", "192", "193", "194", "195", "196", "197", "198"],
+      "bits": 10,
+      "clk_rising_edge": true,
+      "clk_mod": 1,
+      "pinned": false,
+      "sticky": false,
+      "input_base": 10,
+      "display_base": 10
+    },
+    {
+      "name": "v_inImageRegion_w",
+      "type": "INPUT",
+      "color": "#c0e249",
+      "values": ["0", "0", "0", "1", "1", "1", "1", "1", "1", "1"],
+      "bits": 1,
+      "clk_rising_edge": true,
+      "clk_mod": 1,
+      "pinned": false,
+      "sticky": false,
+      "input_base": 10,
+      "display_base": 10
+    },
+    {
+      "name": "v_romAddr_r",
+      "type": "BUS_DATA",
+      "color": "#00FFFF",
+      "values": ["0", "0", "0", "0", "1", "2", "3", "4", "5", "6"],
+      "bits": 16,
+      "clk_rising_edge": true,
+      "clk_mod": 1,
+      "pinned": false,
+      "sticky": false,
+      "input_base": 10,
+      "display_base": 10
+    },
+    {
+      "name": "v_romData_w",
+      "type": "BUS_DATA",
+      "color": "#f908a7",
+      "values": ["0", "0", "0", "0", "D0", "D1", "D2", "D3", "D4", "D5"],
+      "bits": 32,
+      "clk_rising_edge": true,
+      "clk_mod": 1,
+      "pinned": false,
+      "sticky": false,
+      "input_base": 10,
+      "display_base": 10
+    },
+    {
+      "name": "v_inImageRegionDelay_r",
+      "type": "INPUT",
+      "color": "#FF8000",
+      "values": ["0", "0", "0", "0", "1", "1", "1", "1", "1", "1"],
+      "bits": 1,
+      "clk_rising_edge": true,
+      "clk_mod": 1,
+      "pinned": false,
+      "sticky": false,
+      "input_base": 10,
+      "display_base": 10
+    },
+    {
+      "name": "o_vgaRed_w",
+      "type": "BUS_DATA",
+      "color": "#f40807",
+      "values": ["0", "0", "0", "0", "R0", "R1", "R2", "R3", "R4", "R5"],
+      "bits": 6,
+      "clk_rising_edge": true,
+      "clk_mod": 1,
+      "pinned": false,
+      "sticky": false,
+      "input_base": 10,
+      "display_base": 10
+    }
+  ]
+}

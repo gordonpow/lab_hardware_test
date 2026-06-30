@@ -1,0 +1,185 @@
+<mxGraphModel dx="1200" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="600" background="#000000" math="0" shadow="0">
+  <root>
+    <mxCell id="0" />
+    <mxCell id="1" parent="0" />
+
+    <!-- ================================================================== -->
+    <!-- Lifeline Headers (Top Blocks - 4 Hardware Entities)                -->
+    <!-- ================================================================== -->
+    <mxCell id="lbl_vga_top" value="vgaController" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="120" y="40" width="140" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="lbl_rom_top" value="ROM_ADDR (位址計算)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="320" y="40" width="160" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="lbl_bram_top" value="BRAM (儲存IP)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="530" y="40" width="120" height="40" as="geometry" />
+    </mxCell>
+    <mxCell id="lbl_port_top" value="VGA Port (色彩輸出)" style="rounded=1;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;align=center;" vertex="1" parent="1">
+      <mxGeometry x="700" y="40" width="150" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- ================================================================== -->
+    <!-- Lifeline dashed lines (Vertical Lines)                             -->
+    <!-- ================================================================== -->
+    <mxCell id="line_vga" style="edgeStyle=none;rounded=0;html=1;dashed=1;strokeColor=#555555;strokeWidth=1;endArrow=none;startArrow=none;" edge="1" parent="1" source="lbl_vga_top">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="190" y="520" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="line_rom" style="edgeStyle=none;rounded=0;html=1;dashed=1;strokeColor=#555555;strokeWidth=1;endArrow=none;startArrow=none;" edge="1" parent="1" source="lbl_rom_top">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="400" y="520" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="line_bram" style="edgeStyle=none;rounded=0;html=1;dashed=1;strokeColor=#555555;strokeWidth=1;endArrow=none;startArrow=none;" edge="1" parent="1" source="lbl_bram_top">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="590" y="520" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="line_port" style="edgeStyle=none;rounded=0;html=1;dashed=1;strokeColor=#555555;strokeWidth=1;endArrow=none;startArrow=none;" edge="1" parent="1" source="lbl_port_top">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="775" y="520" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================== -->
+    <!-- Execution Specifications (Color-Coded & Seamlessly Jointed)         -->
+    <!-- ================================================================== -->
+    <!-- vgaController: Color segmented without vertical gaps for 100% time accuracy -->
+    <mxCell id="act_vga1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#555555;strokeColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="185" y="140" width="10" height="60" as="geometry" /> <!-- BG1: 192 clks -->
+    </mxCell>
+    <mxCell id="act_vga2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="185" y="200" width="10" height="15" as="geometry" /> <!-- X=192 trigger point -->
+    </mxCell>
+    <mxCell id="act_vga3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="185" y="215" width="10" height="105" as="geometry" /> <!-- Image active: 256 clks -->
+    </mxCell>
+    <mxCell id="act_vga4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#555555;strokeColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="185" y="320" width="10" height="60" as="geometry" /> <!-- BG2: 192 clks -->
+    </mxCell>
+    <mxCell id="act_vga5" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#888888;strokeColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="185" y="380" width="10" height="20" as="geometry" /> <!-- Front Porch: 16 clk -->
+    </mxCell>
+    <mxCell id="act_vga6" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="185" y="400" width="10" height="30" as="geometry" /> <!-- HSync Pulse: 96 clk -->
+    </mxCell>
+    <mxCell id="act_vga7" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#888888;strokeColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="185" y="430" width="10" height="20" as="geometry" /> <!-- Back Porch: 48 clk -->
+    </mxCell>
+
+    <!-- ROM_ADDR: 1 clk height -->
+    <mxCell id="act_rom1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFF9C4;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="395" y="200" width="10" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- BRAM: 1 clk height -->
+    <mxCell id="act_bram1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B3E5FC;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="585" y="240" width="10" height="40" as="geometry" />
+    </mxCell>
+
+    <!-- VGA Port: Color-coded display segments showing status -->
+    <mxCell id="act_port1" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#555555;strokeColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="770" y="140" width="10" height="140" as="geometry" /> <!-- BG: 194 clks -->
+    </mxCell>
+    <mxCell id="act_port2" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A5D6A7;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="770" y="280" width="10" height="80" as="geometry" /> <!-- Image output: 256 clks -->
+    </mxCell>
+    <mxCell id="act_port3" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#555555;strokeColor=#FFFFFF;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="770" y="360" width="10" height="60" as="geometry" /> <!-- BG: 190 clks -->
+    </mxCell>
+    <mxCell id="act_port4" value="" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCDD2;strokeColor=#000000;strokeWidth=1;" vertex="1" parent="1">
+      <mxGeometry x="770" y="420" width="10" height="30" as="geometry" /> <!-- HSync Pull-low: 96 clks -->
+    </mxCell>
+
+    <!-- ================================================================== -->
+    <!-- Pure Horizontal Message Flow Arrows (Aligned to Color Boundaries)  -->
+    <!-- ================================================================== -->
+    <!-- X=192 detection: y=200 (top of yellow block) -->
+    <mxCell id="msg_addr" value="v_pixelX_w = 192 (影像區起點)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0;entryX=0;entryY=0;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;fontSize=10;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="195" y="200" as="sourcePoint" />
+        <mxPoint x="395" y="200" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    
+    <!-- Latch address: from ROM_ADDR bottom to BRAM top (y=240) -->
+    <mxCell id="msg_latch" value="鎖存位址" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;fontSize=10;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="405" y="240" as="sourcePoint" />
+        <mxPoint x="585" y="240" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Read data: from BRAM bottom to VGA Port top (y=280) -->
+    <mxCell id="msg_read" value="讀出資料" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;fontSize=10;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="595" y="280" as="sourcePoint" />
+        <mxPoint x="770" y="280" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- X=448 image end: aligned to bottom of green block in controller (y=320) -->
+    <mxCell id="msg_end" value="v_pixelX_w = 448 (影像區終點)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;fontSize=10;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="195" y="320" as="sourcePoint" />
+        <mxPoint x="770" y="320" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- X=640 active scan end: aligned to bottom of grey block in controller (y=380) -->
+    <mxCell id="msg_hsync" value="v_pixelX_w = 640 (有效顯示結束)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;fontSize=10;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="195" y="380" as="sourcePoint" />
+        <mxPoint x="770" y="380" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- HSync pull-low: aligned to top of pink block in output port (y=420) -->
+    <mxCell id="msg_hsync_low" value="HSync 同步拉低生效 (2 clk延遲)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;fontSize=10;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="195" y="420" as="sourcePoint" />
+        <mxPoint x="770" y="420" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- ================================================================== -->
+    <!-- Dimensions (Clean and Minimalist - No Left/Right Redundancy)       -->
+    <!-- ================================================================== -->
+    <!-- Latency specs -->
+    <mxCell id="dim_rom_delay" value="1 clk" style="edgeStyle=none;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=1;endArrow=classic;startArrow=classic;fontColor=#FFFFFF;fontSize=9;labelBackgroundColor=#000000;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="430" y="200" as="sourcePoint" />
+        <mxPoint x="430" y="240" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="dim_bram_delay" value="1 clk" style="edgeStyle=none;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=1;endArrow=classic;startArrow=classic;fontColor=#FFFFFF;fontSize=9;labelBackgroundColor=#000000;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="615" y="240" as="sourcePoint" />
+        <mxPoint x="615" y="280" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+    <!-- Output durations -->
+    <mxCell id="dim_c1" value="194 clk (前段背景)" style="edgeStyle=none;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=1;endArrow=classic;startArrow=classic;fontColor=#FFFFFF;fontSize=9;labelBackgroundColor=#000000;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="805" y="140" as="sourcePoint" />
+        <mxPoint x="805" y="280" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="dim_c2" value="256 clk (影像圖片)" style="edgeStyle=none;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=1;endArrow=classic;startArrow=classic;fontColor=#FFFFFF;fontSize=9;labelBackgroundColor=#000000;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="805" y="280" as="sourcePoint" />
+        <mxPoint x="805" y="360" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+    <mxCell id="dim_c3" value="190 clk (後段背景+前廊)" style="edgeStyle=none;rounded=0;html=1;strokeColor=#FFFFFF;strokeWidth=1;endArrow=classic;startArrow=classic;fontColor=#FFFFFF;fontSize=9;labelBackgroundColor=#000000;" edge="1" parent="1">
+      <mxGeometry relative="1" as="geometry">
+        <mxPoint x="805" y="360" as="sourcePoint" />
+        <mxPoint x="805" y="420" as="targetPoint" />
+      </mxGeometry>
+    </mxCell>
+
+  </root>
+</mxGraphModel>

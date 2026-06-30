@@ -1,0 +1,89 @@
+<mxfile host="65bd71144e">
+    <diagram id="aov" name="VGA Dataflow AOV">
+        <mxGraphModel dx="293" dy="984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="900" pageHeight="600" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="v_A" value="A" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=20;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="40" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="v_B" value="B" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFFFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=20;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="240" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="v_end" value="end" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFCDD2;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=16;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="560" y="140" width="80" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_start_A" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#FFFFFF;strokeWidth=2;" parent="1" target="v_A" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_start_B" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#FFFFFF;strokeWidth=2;" parent="1" target="v_B" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_A_end" value="420,000 clocks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;fontSize=12;" parent="1" source="v_A" target="v_end" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_B_end" value="65,536 clocks" style="edgeStyle=orthogonalEdgeStyle;rounded=1;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#FFFFFF;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;fontSize=12;" parent="1" source="v_B" target="v_end" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_h1" value="動作" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8CB339;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontStyle=1;align=center;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="380" width="60" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_h2" value="動作說明" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8CB339;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontStyle=1;align=center;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="380" width="320" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_h3" value="時間(clocks)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8CB339;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontStyle=1;align=center;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="380" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_h4" value="輸入" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8CB339;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontStyle=1;align=center;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="380" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_h5" value="輸出" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#8CB339;strokeColor=#FFFFFF;fontColor=#FFFFFF;fontStyle=1;align=center;fontSize=13;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="380" width="150" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_a1" value="A" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C5E1A5;fontColor=#000000;align=center;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="420" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_a2" value="進行水平掃描與垂直掃描&#10;共800 X 525個像素" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C5E1A5;fontColor=#000000;align=left;spacingLeft=10;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="420" width="320" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_a3" value="800 X 525 =&#10;420,000" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C5E1A5;fontColor=#000000;align=center;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="420" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_a4" value="i_clk" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C5E1A5;fontColor=#000000;align=center;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="420" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_a5" value="h_count, v_count" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C5E1A5;fontColor=#000000;align=center;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="420" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_b1" value="B" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F8E9;strokeColor=#C5E1A5;fontColor=#000000;align=center;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="480" width="60" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_b2" value="顯示每幀畫面之影像圖片(於影像區)&#10;共256 X 256個像素" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F8E9;strokeColor=#C5E1A5;fontColor=#000000;align=left;spacingLeft=10;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="110" y="480" width="320" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_b3" value="256 X 256 =&#10;65,536" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F8E9;strokeColor=#C5E1A5;fontColor=#000000;align=center;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="430" y="480" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_b4" value="i_clk, h_count,&#10;v_count, rom_data" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F8E9;strokeColor=#C5E1A5;fontColor=#000000;align=center;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="480" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="cell_b5" value="red, green, blue" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#F1F8E9;strokeColor=#C5E1A5;fontColor=#000000;align=center;fontSize=12;" parent="1" vertex="1">
+                    <mxGeometry x="700" y="480" width="150" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FFFFFF;" parent="1" source="2" target="v_A" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="79.98" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="4" style="edgeStyle=orthogonalEdgeStyle;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeWidth=2;strokeColor=#FFFFFF;" parent="1" source="2" target="v_B" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="320" y="279.98" as="targetPoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="2" value="start" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFCDD2;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=16;fontStyle=1;align=center;" parent="1" vertex="1">
+                    <mxGeometry x="180" y="139.98" width="80" height="80" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
