@@ -1,6 +1,6 @@
 <mxfile host="65bd71144e">
     <diagram id="msc_sequence_diagram" name="MSC時序圖">
-        <mxGraphModel dx="1072" dy="984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="750" background="#000000" math="0" shadow="0">
+        <mxGraphModel dx="2231" dy="1634" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1000" pageHeight="750" background="#000000" math="0" shadow="0">
             <root>
                 <mxCell id="0"/>
                 <mxCell id="1" parent="0"/>
@@ -77,9 +77,10 @@
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="msg_ball" value="o_ballVx_b = -4 (球拍擊球反彈)" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FFFFFF;strokeWidth=1.5;endArrow=classic;endFill=1;fontSize=10;fontColor=#FFFFFF;verticalAlign=bottom;labelBackgroundColor=none;" parent="1" edge="1">
-                    <mxGeometry relative="1" as="geometry">
+                    <mxGeometry x="0.0962" y="-15" relative="1" as="geometry">
                         <mxPoint x="366" y="215" as="sourcePoint"/>
                         <mxPoint x="574" y="215" as="targetPoint"/>
+                        <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
                 <mxCell id="msg_color" value="o_vgaRed/Green/Blue (渲染輸出)" style="edgeStyle=none;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#FFFFFF;strokeWidth=1.5;endArrow=classic;endFill=1;fontSize=10;fontColor=#FFFFFF;verticalAlign=bottom;labelBackgroundColor=none;" parent="1" edge="1">
@@ -95,19 +96,20 @@
                         <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="delay_logic" value="1 clk (物理運算延遲)" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#FFFFFF;strokeWidth=1;fontSize=10;fontColor=#FFFFFF;align=left;verticalAlign=middle;" parent="1" edge="1">
-                    <mxGeometry relative="1" as="geometry">
+                <mxCell id="delay_logic" value="1 clk (物理運算延遲)" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#FFFFFF;strokeWidth=1;fontSize=10;fontColor=#FFFFFF;align=left;verticalAlign=middle;labelBackgroundColor=#000000;" parent="1" edge="1">
+                    <mxGeometry x="-1" y="10" relative="1" as="geometry">
                         <mxPoint x="380" y="200" as="sourcePoint"/>
                         <mxPoint x="380" y="215" as="targetPoint"/>
+                        <mxPoint as="offset"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="delay_video" value="8 clk (VGA 輸出流水線延遲)" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#FFFFFF;strokeWidth=1;fontSize=10;fontColor=#FFFFFF;align=left;verticalAlign=middle;" parent="1" edge="1">
+                <mxCell id="delay_video" value="8 clk (VGA 輸出流水線延遲)" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#FFFFFF;strokeWidth=1;fontSize=10;fontColor=#FFFFFF;align=left;verticalAlign=middle;labelBackgroundColor=#000000;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="605" y="215" as="sourcePoint"/>
                         <mxPoint x="605" y="335" as="targetPoint"/>
                     </mxGeometry>
                 </mxCell>
-                <mxCell id="time_refresh" value="1.67 × 10^6 clk (物理幀更新週期)" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#FFFFFF;strokeWidth=1;fontSize=10;fontColor=#FFFFFF;align=left;verticalAlign=middle;" parent="1" edge="1">
+                <mxCell id="time_refresh" value="1.67 × 10^6 clk (物理幀更新週期)" style="endArrow=classic;startArrow=classic;html=1;strokeColor=#FFFFFF;strokeWidth=1;fontSize=10;fontColor=#FFFFFF;align=left;verticalAlign=middle;labelBackgroundColor=#000000;" parent="1" edge="1">
                     <mxGeometry relative="1" as="geometry">
                         <mxPoint x="825" y="200" as="sourcePoint"/>
                         <mxPoint x="825" y="555" as="targetPoint"/>
