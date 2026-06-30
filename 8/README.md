@@ -39,14 +39,18 @@ Atari Pong 是一款雙人乒乓球遊戲。玩家各自控制左、右兩側的
 
 ### 各子模組內部電路架構圖
 
-1. **clkDivider (時脈除頻)**：
-   ![clkDivider 架構圖](./img/clkDivider_architecture.png)
-2. **vgaController (VGA控制器)**：
-   ![vgaController 架構圖](./img/vgaController_architecture.png)
-3. **gameLogic (遊戲控制與碰撞核心)**：
-   ![gameLogic 架構圖](./img/gameLogic_architecture.png)
-4. **videoGenerator (畫面渲染與混合)**：
-   ![videoGenerator 架構圖](./img/videoGenerator_architecture.png)
+#### 1. clkDivider (時脈除頻)
+![clkDivider 架構圖](./img/clkDivider_architecture.png)
+
+#### 2. vgaController (VGA控制器)
+![vgaController 架構圖](./img/vgaController_architecture.png)
+
+#### 3. gameLogic (遊戲控制與碰撞核心)
+![gameLogic 架構圖](./img/gameLogic_architecture.png)
+
+#### 4. videoGenerator (畫面渲染與混合)
+![videoGenerator 架構圖](./img/videoGenerator_architecture.png)
+
 
 ---
 
