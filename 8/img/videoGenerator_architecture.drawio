@@ -1,0 +1,140 @@
+<mxfile host="65bd71144e">
+    <diagram id="videoGenerator 架構_diagram" name="videoGenerator 架構">
+        <mxGraphModel dx="1072" dy="984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="1000" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="top" value="videoGenerator (影像文字渲染與混合)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1E1E1E;strokeColor=#FFFFFF;strokeWidth=3;align=left;verticalAlign=top;fontColor=#FFFFFF;fontSize=14;fontStyle=1;spacingLeft=10;spacingTop=5;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="40" width="660" height="400" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_clk" value="i_clk" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="60" width="50" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_pe" value="i_pixelEn" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="120" width="50" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_px" value="i_pixelX_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="180" width="50" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_py" value="i_pixelY_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="240" width="50" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_vo" value="i_videoOn" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="300" width="50" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_red" value="o_vgaRed_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="730" y="90" width="60" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_grn" value="o_vgaGreen_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="730" y="160" width="60" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_blu" value="o_vgaBlue_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="730" y="230" width="60" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_draw" value="DRAW_DET&#10;(繪圖區域判定)&#10;- 擋板 / 球體 / 網子" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B66D00;strokeColor=#FF9800;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="170" width="130" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_txt" value="TEXT_DRAW&#10;(文字與分數判定)&#10;- 分數 / 贏家宣告" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B66D00;strokeColor=#FF9800;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="170" y="260" width="130" height="70" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_mixer" value="COLOR_MIXER&#10;(色彩混合與優先權)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B66D00;strokeColor=#FF9800;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="360" y="170" width="120" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="reg_rgb" value="RGB_OUT_REG&#10;(RGB 輸出暫存器)&#10;v_vgaRed/Green/Blue_r" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1B5E20;strokeColor=#4CAF50;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="530" y="170" width="140" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_px2draw" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FFFF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" parent="1" source="pin_px" target="mod_draw" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="100" y="192"/>
+                            <mxPoint x="100" y="191"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_py2draw" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00FFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" parent="1" source="pin_py" target="mod_draw" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="90" y="252"/>
+                            <mxPoint x="90" y="219"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_px2txt" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FFFF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" parent="1" source="pin_px" target="mod_txt" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="100" y="192"/>
+                            <mxPoint x="100" y="281"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_py2txt" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00FFFF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" parent="1" source="pin_py" target="mod_txt" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="90" y="252"/>
+                            <mxPoint x="90" y="309"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_draw2mix" value="物件判定" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF3D3D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="mod_draw" target="mod_mixer" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="205"/>
+                            <mxPoint x="330" y="206"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_txt2mix" value="文字判定" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#B000FF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="mod_txt" target="mod_mixer" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="295"/>
+                            <mxPoint x="330" y="254"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_vo2mix" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00FF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.9;entryDx=0;entryDy=0;" parent="1" source="pin_vo" target="mod_mixer" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="330" y="312"/>
+                            <mxPoint x="330" y="278"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_mix2reg" value="v_vgaRGB_w" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF00FF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="mod_mixer" target="reg_rgb" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_pe_rgb" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF9100;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="pin_pe" target="reg_rgb" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="490" y="132"/>
+                            <mxPoint x="580" y="132"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_reg2red" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF0000;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="reg_rgb" target="pin_red" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="700" y="194"/>
+                            <mxPoint x="700" y="102"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_reg2grn" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00FF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="reg_rgb" target="pin_grn" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="700" y="210"/>
+                            <mxPoint x="700" y="172"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_reg2blu" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#0000FF;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="reg_rgb" target="pin_blu" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="700" y="226"/>
+                            <mxPoint x="700" y="242"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

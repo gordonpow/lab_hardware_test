@@ -1,0 +1,129 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="Electron" modified="2026-07-01T00:00:00.000Z" agent="Mozilla/5.0" version="21.5.0" type="device">
+  <diagram id="architecture_diagram" name="RTL Architecture">
+    <mxGraphModel dx="1200" dy="1200" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+
+        
+        <mxCell id="top_container" value="pongGameTop (頂層模組)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;strokeColor=#FF0000;strokeWidth=3;fontColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=10;spacingTop=10;" vertex="1" parent="1">
+          <mxGeometry x="60" y="40" width="700" height="540" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="mod_clk" value="clkDivider&#10;(時脈除頻)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00FFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="90" y="100" width="110" height="60" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="mod_vga" value="vgaController&#10;(VGA同步訊號)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="250" y="90" width="130" height="80" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="mod_logic" value="gameLogic&#10;(遊戲控制與FSM)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="240" y="270" width="150" height="230" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="mod_video" value="videoGenerator&#10;(畫面像素渲染)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#E040FB;strokeColor=#000000;strokeWidth=2;fontColor=#FFFFFF;fontStyle=1" vertex="1" parent="1">
+          <mxGeometry x="500" y="180" width="170" height="260" as="geometry" />
+        </mxCell>
+
+        
+        
+        <mxCell id="pin_clk" value="i_clk" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="5" y="115" width="45" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="line_clk" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#FFFFFF;strokeWidth=2;" edge="1" parent="1" source="pin_clk" target="mod_clk">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="pin_rst" value="i_rst" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="5" y="520" width="45" height="30" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="line_rst_vga" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=1;strokeColor=#FFFFFF;strokeWidth=1.5;" edge="1" parent="1" source="pin_rst" target="mod_vga">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="120" y="535" />
+              <mxPoint x="120" y="240" />
+              <mxPoint x="315" y="240" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="line_rst_logic" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=1;strokeColor=#FFFFFF;strokeWidth=1.5;" edge="1" parent="1" source="pin_rst" target="mod_logic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="535" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        
+        <mxCell id="pin_ctrl" value="i_leftUp&#10;i_leftDown&#10;i_rightUp&#10;i_rightDown" style="text;html=1;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="5" y="325" width="45" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="line_ctrl" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.4;strokeColor=#FFFFFF;strokeWidth=2;" edge="1" parent="1" source="pin_ctrl" target="mod_logic">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        
+        <mxCell id="line_pixel_en" value="v_pixelEn_w" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#00FFFF;strokeWidth=2;labelBackgroundColor=#000000;fontColor=#FFFFFF;" edge="1" parent="1" source="mod_clk" target="mod_vga">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+        
+        <mxCell id="line_vga_video" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.3;entryX=0;entryY=0.2;strokeColor=#FFFF00;strokeWidth=2;fontColor=#FFFFFF;" edge="1" parent="1" source="mod_vga" target="mod_video">
+          <mxGeometry relative="1" as="geometry">
+            </mxGeometry>
+        </mxCell>
+
+        
+        <mxCell id="line_vsync_logic" value="o_vSync (Frame 同步)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.25;exitY=1;entryX=0.25;entryY=0;strokeColor=#FFFF00;strokeWidth=2;labelBackgroundColor=#000000;fontColor=#FFFFFF;" edge="1" parent="1" source="mod_vga" target="mod_logic">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="282" y="220" />
+              <mxPoint x="278" y="220" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        
+        
+        <mxCell id="line_logic_video" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.4;entryX=0;entryY=0.7;strokeColor=#FF8000;strokeWidth=2;fontColor=#FFFFFF;" edge="1" parent="1" source="mod_logic" target="mod_video">
+          <mxGeometry relative="1" as="geometry">
+            </mxGeometry>
+        </mxCell>
+
+        
+        
+        <mxCell id="pin_vga_sync" value="o_hSync&#10;o_vSync" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="780" y="105" width="40" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="line_vga_sync_out" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.7;entryX=0;entryY=0.5;strokeColor=#FFFF00;strokeWidth=2;" edge="1" parent="1" source="mod_vga" target="pin_vga_sync">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="410" y="146" />
+              <mxPoint x="410" y="70" />
+              <mxPoint x="730" y="70" />
+              <mxPoint x="730" y="130" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+
+        
+        <mxCell id="pin_vga_color" value="o_vgaRed_b&#10;o_vgaGreen_b&#10;o_vgaBlue_b" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;labelBackgroundColor=#000000;" vertex="1" parent="1">
+          <mxGeometry x="780" y="270" width="40" height="80" as="geometry" />
+        </mxCell>
+        <mxCell id="line_vga_color_out" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#E040FB;strokeWidth=2;" edge="1" parent="1" source="mod_video" target="pin_vga_color">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+
+      <mxCell id="lbl_logic_video" value="o_leftPaddleY_b, o_rightPaddleY_b&#10;o_ballX_b, o_ballY_b&#10;o_leftScore_b, o_rightScore_b&#10;o_gameState_b" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1"><mxGeometry x="385" y="290" width="120" height="60" as="geometry" /></mxCell><mxCell id="lbl_vga_video" value="o_pixelX_b, o_pixelY_b&#10;o_videoOn" style="text;html=1;align=left;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#FFFFFF;fontSize=11;" vertex="1" parent="1"><mxGeometry x="450" y="125" width="120" height="40" as="geometry" /></mxCell></root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

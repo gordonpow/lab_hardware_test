@@ -1,0 +1,48 @@
+<mxfile host="65bd71144e">
+    <diagram id="fsm_diagram" name="FSM State Transition">
+        <mxGraphModel dx="1072" dy="984" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="state_idle" value="ST_IDLE&#10;(等待開始)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="100" y="140" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="state_play" value="ST_PLAY&#10;(遊戲中)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#66BB6A;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="140" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="state_score" value="ST_SCORE&#10;(得分重置)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#FFCA28;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="320" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="state_over" value="ST_OVER&#10;(遊戲結束)" style="ellipse;whiteSpace=wrap;html=1;aspect=fixed;fillColor=#EF5350;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontStyle=1;" parent="1" vertex="1">
+                    <mxGeometry x="500" y="140" width="90" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_idle_play" value="按任意鍵開始" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#29B6F6;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;" parent="1" source="state_idle" target="state_play" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_play_score" value="出界 且得分 &lt; 3" style="edgeStyle=none;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#66BB6A;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;" parent="1" source="state_play" target="state_score" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_play_over" value="出界 且得分 = 3" style="edgeStyle=none;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#66BB6A;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;" parent="1" source="state_play" target="state_over" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="trans_score_play" value="延遲計數完成" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.5;entryX=0;entryY=0.75;strokeColor=#FFCA28;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;" parent="1" source="state_score" target="state_play" edge="1">
+                    <mxGeometry x="-0.0032" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="250" y="365"/>
+                            <mxPoint x="250" y="208"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="trans_over_idle" value="重置/重新開始鍵" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=0;entryX=0.5;entryY=0;strokeColor=#EF5350;strokeWidth=2;fontColor=#FFFFFF;labelBackgroundColor=#000000;" parent="1" source="state_over" target="state_idle" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="545" y="80"/>
+                            <mxPoint x="145" y="80"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

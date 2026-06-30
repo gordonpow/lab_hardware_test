@@ -1,0 +1,109 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="65bd71144e">
+    <diagram id="breakdown_diagram" name="Breakdown">
+        <mxGraphModel dx="1072" dy="984" grid="1" gridSize="5" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0" />
+                <mxCell id="1" parent="0" />
+                <mxCell id="top_module" value="pongGameTop&#10;(頂層模組)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF0000;strokeColor=#000000;fontColor=#ffffff;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="50" width="120" height="40" as="geometry" />
+                </mxCell>
+                <mxCell id="sub_clk" value="clkDivider&#10;(時脈除頻)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#000000;fontColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="45" y="180" width="110" height="40" as="geometry" />
+                </mxCell>
+                <mxCell id="sub_vga" value="vgaController&#10;(VGA控制器)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#000000;fontColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="240" y="180" width="110" height="40" as="geometry" />
+                </mxCell>
+                <mxCell id="sub_logic" value="gameLogic&#10;(遊戲邏輯控制)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#000000;fontColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="655" y="180" width="110" height="40" as="geometry" />
+                </mxCell>
+                <mxCell id="sub_video" value="videoGenerator&#10;(畫面渲染)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#4CAF50;strokeColor=#000000;fontColor=#000000;strokeWidth=2;" parent="1" vertex="1">
+                    <mxGeometry x="1070" y="180" width="110" height="40" as="geometry" />
+                </mxCell>
+                <mxCell id="line_top_clk" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#4CAF50;strokeWidth=2;" parent="1" source="top_module" target="sub_clk" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="610" y="130" /><mxPoint x="100" y="130" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="line_top_vga" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#4CAF50;strokeWidth=2;" parent="1" source="top_module" target="sub_vga" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="610" y="130" /><mxPoint x="295" y="130" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="line_top_logic" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#4CAF50;strokeWidth=2;" parent="1" source="top_module" target="sub_logic" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="610" y="130" /><mxPoint x="710" y="130" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="line_top_video" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#4CAF50;strokeWidth=2;" parent="1" source="top_module" target="sub_video" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="610" y="130" /><mxPoint x="1125" y="130" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="p_clk_gen" value="CLK_GEN&#10;(像素時脈致能)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="line_clk_p1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_clk" target="p_clk_gen" edge="1">
+                    <mxGeometry relative="1" as="geometry" />
+                </mxCell>
+                <mxCell id="p_h_sync" value="H_SYNC_GEN&#10;(水平同步)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="190" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="p_v_sync" value="V_SYNC_GEN&#10;(垂直同步)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="300" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="line_vga_p1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_vga" target="p_h_sync" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="295" y="250" /><mxPoint x="240" y="250" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="line_vga_p2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_vga" target="p_v_sync" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="295" y="250" /><mxPoint x="350" y="250" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="p_fsm" value="FSM_PROC&#10;(狀態機處理)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="440" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="p_paddle" value="PADDLE_CTRL&#10;(擋板控制)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="550" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="p_ball" value="BALL_CTRL&#10;(球體控制)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="660" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="p_coll" value="COLLISION_DET&#10;(碰撞偵測)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="770" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="p_score" value="SCORE_CTRL&#10;(計分控制)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="880" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="line_logic_p1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_logic" target="p_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="710" y="250" /><mxPoint x="490" y="250" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="line_logic_p2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_logic" target="p_paddle" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="710" y="250" /><mxPoint x="600" y="250" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="line_logic_p3" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_logic" target="p_ball" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        </mxGeometry>
+                </mxCell>
+                <mxCell id="line_logic_p4" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_logic" target="p_coll" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="710" y="250" /><mxPoint x="820" y="250" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="line_logic_p5" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_logic" target="p_score" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="710" y="250" /><mxPoint x="930" y="250" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="p_pixel_color" value="PIXEL_COLOR&#10;(像素著色)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="1020" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="p_text_render" value="TEXT_RENDER&#10;(分數渲染)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#03A9F4;strokeColor=#000000;fontColor=#000000;strokeWidth=1.5;" parent="1" vertex="1">
+                    <mxGeometry x="1130" y="280" width="100" height="35" as="geometry" />
+                </mxCell>
+                <mxCell id="line_video_p1" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_video" target="p_pixel_color" edge="1">
+                    <mxGeometry relative="1" as="geometry"><Array as="points"><mxPoint x="1125" y="250" /><mxPoint x="1070" y="250" /></Array></mxGeometry>
+                </mxCell>
+                <mxCell id="line_video_p2" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#03A9F4;strokeWidth=1.5;" parent="1" source="sub_video" target="p_text_render" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points"><mxPoint x="1125" y="250" /><mxPoint x="1180" y="250" /></Array></mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

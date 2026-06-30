@@ -1,0 +1,211 @@
+<mxfile host="65bd71144e">
+    <diagram id="gameLogic 架構_diagram" name="gameLogic 架構">
+        <mxGraphModel dx="1072" dy="984" grid="1" gridSize="10" guides="0" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="800" pageHeight="1000" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="top" value="gameLogic (遊戲控制與碰撞核心)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1E1E1E;strokeColor=#FFFFFF;strokeWidth=3;align=left;verticalAlign=top;fontColor=#FFFFFF;fontSize=14;fontStyle=1;spacingLeft=10;spacingTop=5;" parent="1" vertex="1">
+                    <mxGeometry x="60" y="40" width="680" height="520" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_clk" value="i_clk" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="60" width="50" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rst" value="i_rst" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="120" width="50" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_vs" value="i_vSync" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="180" width="50" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_keys" value="i_leftUp&#10;i_leftDown&#10;i_rightUp&#10;i_rightDown" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#0078D4;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="10" y="240" width="50" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_lpad" value="o_leftPaddleY_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="60" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rpad" value="o_rightPaddleY_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="120" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_bx" value="o_ballX_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="180" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_by" value="o_ballY_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="240" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_lsc" value="o_leftScore_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="300" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rsc" value="o_rightScore_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="360" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_state" value="o_gameState_b" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="420" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_win" value="o_winner" style="html=1;shadow=0;dashed=0;align=center;verticalAlign=middle;shape=mxgraph.arrows2.arrow;dy=0.6;dx=15;direction=east;fillColor=#D83B01;strokeColor=none;fontColor=#FFFFFF;fontSize=10;" parent="1" vertex="1">
+                    <mxGeometry x="750" y="480" width="70" height="25" as="geometry"/>
+                </mxCell>
+                <mxCell id="reg_fsm" value="FSM_REG&#10;(狀態暫存器)&#10;v_state_r" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1B5E20;strokeColor=#4CAF50;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="160" y="80" width="120" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_pad" value="PADDLE_CTRL&#10;(擋板位置運算)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B66D00;strokeColor=#FF9800;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="80" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_ball" value="BALL_CTRL&#10;(球體物理運算)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B66D00;strokeColor=#FF9800;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="330" y="170" width="140" height="60" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_coll" value="COLLISION_DET&#10;(碰撞出界偵測)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#B66D00;strokeColor=#FF9800;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="540" y="170" width="120" height="65" as="geometry"/>
+                </mxCell>
+                <mxCell id="reg_score" value="SCORE_REG&#10;(計分暫存器)&#10;v_leftScore_r&#10;v_rightScore_r" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1B5E20;strokeColor=#4CAF50;strokeWidth=2;align=center;verticalAlign=middle;fontColor=#FFFFFF;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="280" width="120" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_clk_f" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00D2FF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" parent="1" source="pin_clk" target="reg_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_rst_f" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF3D3D;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.7;entryDx=0;entryDy=0;" parent="1" source="pin_rst" target="reg_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="100" y="132"/>
+                            <mxPoint x="100" y="122"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_key2pad" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#B000FF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="pin_keys" target="mod_pad" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="280"/>
+                            <mxPoint x="130" y="170"/>
+                            <mxPoint x="320" y="170"/>
+                            <mxPoint x="320" y="110"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_key2fsm" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#B000FF;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.8;entryDx=0;entryDy=0;" parent="1" source="pin_keys" target="reg_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="280"/>
+                            <mxPoint x="130" y="128"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_fsm2pad" value="v_state_r" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF9100;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="reg_fsm" target="mod_pad" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="e_fsm2ball" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF9100;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.3;entryDx=0;entryDy=0;" parent="1" source="reg_fsm" target="mod_ball" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="300" y="122"/>
+                            <mxPoint x="300" y="188"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_pad2pin_l" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00FF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="mod_pad" target="pin_lpad" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="110"/>
+                            <mxPoint x="500" y="73"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_pad2pin_r" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00FF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="mod_pad" target="pin_rpad" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="500" y="110"/>
+                            <mxPoint x="500" y="133"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_ball2pin_x" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FFFF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="mod_ball" target="pin_bx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="510" y="200"/>
+                            <mxPoint x="510" y="160"/>
+                            <mxPoint x="690" y="160"/>
+                            <mxPoint x="690" y="193"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_ball2pin_y" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FFFF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="mod_ball" target="pin_by" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="510" y="200"/>
+                            <mxPoint x="510" y="253"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_sc2pin_l" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF00FF;exitX=1;exitY=0.3;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="reg_score" target="pin_lsc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="670" y="304"/>
+                            <mxPoint x="670" y="312"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_sc2pin_r" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#ADFF2F;exitX=1;exitY=0.7;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="reg_score" target="pin_rsc" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="670" y="336"/>
+                            <mxPoint x="670" y="372"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_fsm2pin_st" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF9100;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;" parent="1" source="reg_fsm" target="pin_state" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="310" y="110"/>
+                            <mxPoint x="310" y="160"/>
+                            <mxPoint x="490" y="160"/>
+                            <mxPoint x="490" y="432"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_vs_fsm" value="i_vSync" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#00FFFF;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="pin_vs" target="reg_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="110" y="192"/>
+                            <mxPoint x="110" y="110"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_pad2coll" value="Paddles Y" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00FF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="mod_pad" target="mod_coll" edge="1">
+                    <mxGeometry x="-0.6842" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                        <Array as="points">
+                            <mxPoint x="500" y="110"/>
+                            <mxPoint x="500" y="150"/>
+                            <mxPoint x="600" y="150"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_ball2coll" value="Ball X,Y" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FFFF00;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="mod_ball" target="mod_coll" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="510" y="200"/>
+                            <mxPoint x="510" y="202"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_win2pin" value="" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=1;exitY=0.8;exitDx=0;exitDy=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;strokeColor=#FF1744;strokeWidth=1.5;" parent="1" source="reg_score" target="pin_win" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="660" y="344"/>
+                            <mxPoint x="660" y="492"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_coll2ball" value="反彈速度" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#00FFFF;exitX=0.25;exitY=1;exitDx=0;exitDy=0;entryX=0.75;entryY=1;entryDx=0;entryDy=0;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="mod_coll" target="mod_ball" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="570" y="250"/>
+                            <mxPoint x="435" y="250"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="e_coll2sc" value="得分/出界" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeWidth=1.5;fontColor=#FFFFFF;fontSize=9;strokeColor=#FF00FF;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;;verticalAlign=bottom;labelBackgroundColor=none" parent="1" source="mod_coll" target="reg_score" edge="1">
+                    <mxGeometry x="-0.4002" y="3" relative="1" as="geometry">
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
