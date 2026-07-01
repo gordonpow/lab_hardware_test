@@ -1,0 +1,51 @@
+<mxfile host="Electron" modified="2026-07-01T23:00:00Z" agent="5.0" version="20.0.4" type="device">
+  <diagram id="clkdivider_diagram" name="時脈分頻模組架構圖">
+    <mxGraphModel dx="800" dy="500" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" background="#000000" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        
+        <!-- 子模組外框 (clkDivider) 青色主題 -->
+        <mxCell id="sub_module" value="時脈分頻模組 (clkDivider)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#002222;strokeColor=#00FFFF;strokeWidth=3;fontColor=#00FFFF;align=left;verticalAlign=top;spacingLeft=15;spacingTop=15;fontSize=14;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="100" y="50" width="400" height="260" as="geometry" />
+        </mxCell>
+        
+        <!-- 內部行程 (CLK_GEN) 藍色 -->
+        <mxCell id="proc_clk_gen" value="時脈產生 Process&lt;br/&gt;(CLK_GEN)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="210" y="120" width="180" height="100" as="geometry" />
+        </mxCell>
+        
+        <!-- 外部引腳標籤 (輸入) -->
+        <mxCell id="pin_clk" value="i_clk" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="30" y="130" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <mxCell id="pin_rst" value="i_rst" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=11;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="30" y="170" width="60" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- 外部引腳標籤 (輸出) -->
+        <mxCell id="pin_slow_clk" value="o_slowClk" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#00FFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+          <mxGeometry x="510" y="160" width="70" height="20" as="geometry" />
+        </mxCell>
+        
+        <!-- 連線 -->
+        <!-- i_clk -> CLK_GEN (白色) -->
+        <mxCell id="edge_clk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.3;strokeColor=#FFFFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_clk" target="proc_clk_gen" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- i_rst -> CLK_GEN (紅色) -->
+        <mxCell id="edge_rst" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.7;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="proc_clk_gen" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+        <!-- CLK_GEN -> slow_clk (青色) -->
+        <mxCell id="edge_slow_clk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="proc_clk_gen" target="pin_slow_clk" edge="1">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

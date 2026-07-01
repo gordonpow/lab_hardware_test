@@ -1,0 +1,154 @@
+<mxfile host="65bd71144e">
+    <diagram id="architecture_diagram" name="RTL 模組架構與資料流圖">
+        <mxGraphModel dx="735" dy="679" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="top_module" value="雙板乒乓球遊戲頂層 (pingpong_double)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#1A1A1A;strokeColor=#FFFFFF;strokeWidth=3;fontColor=#FFFFFF;align=left;verticalAlign=top;spacingLeft=15;spacingTop=15;fontSize=16;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="100" y="50" width="630" height="480" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_clk" value="時脈分頻模組&lt;br/&gt;(clkDivider)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#00FFFF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="160" y="110" width="160" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_ctrl" value="板端控制器&lt;br/&gt;(boardController)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF8000;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="460" y="110" width="220" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_link" value="雙板通訊收發器&lt;br/&gt;(linkTransceiver)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF00;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="160" y="330" width="200" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="mod_disp" value="顯示與計分管理器&lt;br/&gt;(displayManager)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF00FF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="460" y="330" width="200" height="120" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_clk" value="i_clk (時脈)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="130" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rst" value="i_rst (重置)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="170" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_sw" value="i_sw&lt;br/&gt;(擊球按鍵)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF007F;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="206" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_id" value="i_boardId&lt;br/&gt;(板角色ID)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7FFF00;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="260" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_io" value="io_line&lt;br/&gt;(共享雙向通訊線)" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#00BFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="375" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_led" value="o_led&lt;br/&gt;(8-bit LED燈)" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF00FF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="750" y="375" width="80" height="30" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_clk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.3;strokeColor=#FFFFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_clk" target="mod_clk" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_rst_clk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.7;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="mod_clk" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_rst_ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.8;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="mod_ctrl" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="460" y="230" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="120" y="180"/>
+                            <mxPoint x="120" y="230"/>
+                            <mxPoint x="460" y="230"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rst_link" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.38;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="mod_link" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="380" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="120" y="180"/>
+                            <mxPoint x="120" y="380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_sw_ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.6;strokeColor=#FF007F;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_sw" target="mod_ctrl" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="460" y="200" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="90" y="220"/>
+                            <mxPoint x="370" y="220"/>
+                            <mxPoint x="370" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_id_ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.46;strokeColor=#7FFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_id" target="mod_ctrl" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="460" y="180" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="145" y="275"/>
+                            <mxPoint x="145" y="260"/>
+                            <mxPoint x="420" y="260"/>
+                            <mxPoint x="420" y="179"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_id_link" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.54;strokeColor=#7FFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_id" target="mod_link" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="160" y="400" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="145" y="275"/>
+                            <mxPoint x="145" y="400"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_io_link" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.7;strokeColor=#00BFFF;strokeWidth=2;endArrow=classic;startArrow=classic;endFill=1;startFill=1;" parent="1" source="pin_io" target="mod_link" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_led" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#FF00FF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="mod_disp" target="pin_led" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_slow_clk_ctrl" value="slow_clk (慢速時脈)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.2;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#00FFFF;fontSize=10;exitDx=0;exitDy=0;" parent="1" source="mod_clk" target="mod_ctrl" edge="1">
+                    <mxGeometry x="0.25" relative="1" as="geometry">
+                        <mxPoint x="460" y="140" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="400" y="160"/>
+                            <mxPoint x="400" y="140"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_slow_clk_link" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=1;entryY=0.15;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="mod_clk" target="mod_link" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="360" y="350" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="400" y="160"/>
+                            <mxPoint x="400" y="350"/>
+                            <mxPoint x="360" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_slow_clk_disp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.17;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="mod_clk" target="mod_disp" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="460" y="350" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="400" y="160"/>
+                            <mxPoint x="400" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_ctrl_link" value="o_txStart, o_txData (傳送控制)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.23;exitY=1;entryX=0.7;entryY=0;strokeColor=#FF8000;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#FF8000;fontSize=10;" parent="1" source="mod_ctrl" target="mod_link" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="300" y="330" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="510" y="300"/>
+                            <mxPoint x="300" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_link_ctrl" value="o_rxReady, o_rxData (接收資料)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.9;exitY=0;entryX=0.36;entryY=1;strokeColor=#FFFF00;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#FFFF00;fontSize=10;" parent="1" source="mod_link" target="mod_ctrl" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="540" y="260" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="340" y="315"/>
+                            <mxPoint x="540" y="315"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_ctrl_disp" value="o_state, o_scoreL, o_scoreR (顯示控制)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.64;exitY=1;entryX=0.7;entryY=0;strokeColor=#FF00FF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#FF00FF;fontSize=10;" parent="1" source="mod_ctrl" target="mod_disp" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

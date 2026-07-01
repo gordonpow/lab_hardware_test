@@ -1,0 +1,156 @@
+<mxfile host="65bd71144e">
+    <diagram id="displaymanager_diagram" name="顯示與計分管理器架構圖">
+        <mxGraphModel dx="251" dy="226" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="sub_module" value="顯示與計分管理器 (displayManager)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#260026;strokeColor=#FF00FF;strokeWidth=3;fontColor=#FF00FF;align=left;verticalAlign=top;spacingLeft=15;spacingTop=15;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="100" y="50" width="740" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="proc_led" value="LED燈位驅動 Process&lt;br/&gt;(LED_DRV)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="240" y="100" width="180" height="130" as="geometry"/>
+                </mxCell>
+                <mxCell id="proc_score_drv" value="分數顯示驅動 Process&lt;br/&gt;(SCORE_DRV)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#AED6F1;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="240" y="270" width="180" height="150" as="geometry"/>
+                </mxCell>
+                <mxCell id="block_mux" value="LED多工選擇 Process&lt;br/&gt;(LED_MUX)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A9DFBF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="540" y="200" width="180" height="100" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_slow_clk" value="i_slowClk" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#00FFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="70" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rst" value="i_rst" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="120" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_state" value="i_state" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFF00;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="150" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_scoreL" value="i_scoreL" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#33FF33;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="200" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_scoreR" value="i_scoreR" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF9933;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="240" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_led" value="o_led" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF00FF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="860" y="240" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_slow_clk_led" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.15;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_slow_clk" target="proc_led" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="140" y="80"/>
+                            <mxPoint x="140" y="120"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_slow_clk_score" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.13;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_slow_clk" target="proc_score_drv" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="140" y="80"/>
+                            <mxPoint x="140" y="290"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rst_led" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.38;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="proc_led" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="80" y="130"/>
+                            <mxPoint x="160" y="130"/>
+                            <mxPoint x="160" y="149"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rst_score" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.33;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="proc_score_drv" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="80" y="130"/>
+                            <mxPoint x="160" y="130"/>
+                            <mxPoint x="160" y="320"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_state_led" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.62;strokeColor=#FFFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_state" target="proc_led" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="180" y="160"/>
+                            <mxPoint x="180" y="180"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_state_score" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.53;strokeColor=#FFFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_state" target="proc_score_drv" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="180" y="160"/>
+                            <mxPoint x="180" y="350"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_scoreL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.73;strokeColor=#33FF33;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_scoreL" target="proc_score_drv" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="200" y="210"/>
+                            <mxPoint x="200" y="380"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_scoreR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.93;strokeColor=#FF9933;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_scoreR" target="proc_score_drv" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="220" y="250"/>
+                            <mxPoint x="220" y="410"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_w_led_move" value="w_ledMove (8-bit 燈位)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.2;strokeColor=#33CCFF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#33CCFF;fontSize=9;" parent="1" source="proc_led" target="block_mux" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="480" y="165"/>
+                            <mxPoint x="480" y="220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_w_led_score" value="w_ledScore (8-bit 得分)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.8;strokeColor=#33CCFF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#33CCFF;fontSize=9;" parent="1" source="proc_score_drv" target="block_mux" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="480" y="345"/>
+                            <mxPoint x="480" y="280"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_led_out" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#FF00FF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="block_mux" target="pin_led" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_state_mux" value="選擇信號 (i_state)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=0;strokeColor=#FFFF00;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#FFFF00;fontSize=9;" parent="1" source="pin_state" target="block_mux" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="180" y="160"/>
+                            <mxPoint x="180" y="240"/>
+                            <mxPoint x="500" y="240"/>
+                            <mxPoint x="500" y="130"/>
+                            <mxPoint x="630" y="130"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pin_id" value="i_boardId" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7FFF00;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="280" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_id_led" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.8;strokeColor=#7FFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_id" target="proc_led" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="140" y="290"/>
+                            <mxPoint x="140" y="204"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_id_mux" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0.5;entryY=1;strokeColor=#7FFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_id" target="block_mux" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="200" y="290"/>
+                            <mxPoint x="200" y="440"/>
+                            <mxPoint x="630" y="440"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

@@ -1,0 +1,237 @@
+<mxfile host="65bd71144e">
+    <diagram id="boardcontroller_diagram" name="板端控制器架構圖">
+        <mxGraphModel dx="508" dy="469" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="sub_module" value="板端控制器 (boardController)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#261300;strokeColor=#FF8000;strokeWidth=3;fontColor=#FF8000;align=left;verticalAlign=top;spacingLeft=15;spacingTop=15;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="100" y="50" width="800" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="proc_debounce" value="按鍵去彈跳 Process&lt;br/&gt;(KEY_DEBOUNCE)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#D7BDE2;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="250" y="180" width="160" height="90" as="geometry"/>
+                </mxCell>
+                <mxCell id="proc_fsm" value="主狀態機 Process&lt;br/&gt;(FSM_CTRL)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF9933;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="460" y="120" width="180" height="260" as="geometry"/>
+                </mxCell>
+                <mxCell id="proc_score" value="得分計數 Process&lt;br/&gt;(SCORE_CNT)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#82E0AA;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="700" y="150" width="180" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_slow_clk" value="i_slowClk" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#00FFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="70" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rst" value="i_rst" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="110" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_sw" value="i_sw" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF007F;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="170" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_id" value="i_boardId" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7FFF00;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="210" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rx_ready" value="i_rxReady" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFF00;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="250" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rx_data" value="i_rxData" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#A020F0;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="290" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_tx_start" value="o_txStart" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#B3E5FC;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="920" y="110" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_tx_data" value="o_txData" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF8000;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="920" y="150" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_state" value="o_state" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF00FF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="920" y="200" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_scoreL" value="o_scoreL" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#33FF33;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="920" y="250" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_scoreR" value="o_scoreR" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF9933;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="920" y="290" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_slow_clk_deb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.11;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_slow_clk" target="proc_debounce" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="80"/>
+                            <mxPoint x="130" y="190"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_slow_clk_fsm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.08;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_slow_clk" target="proc_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="80"/>
+                            <mxPoint x="130" y="140"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_slow_clk_score" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.11;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_slow_clk" target="proc_score" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="130" y="80"/>
+                            <mxPoint x="130" y="100"/>
+                            <mxPoint x="680" y="100"/>
+                            <mxPoint x="680" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rst_deb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.33;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="proc_debounce" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="150" y="120"/>
+                            <mxPoint x="150" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rst_fsm" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.19;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="proc_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="150" y="120"/>
+                            <mxPoint x="150" y="170"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rst_score" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.28;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="proc_score" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="150" y="120"/>
+                            <mxPoint x="150" y="110"/>
+                            <mxPoint x="670" y="110"/>
+                            <mxPoint x="670" y="200"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_sw_deb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.56;strokeColor=#FF007F;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_sw" target="proc_debounce" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="170" y="180"/>
+                            <mxPoint x="170" y="230"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_deb_sw_fsm" value="w_swPressed_r" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.27;strokeColor=#33CCFF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#33CCFF;fontSize=10;" parent="1" source="proc_debounce" target="proc_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="420" y="225"/>
+                            <mxPoint x="420" y="210"/>
+                            <mxPoint x="435" y="210"/>
+                            <mxPoint x="435" y="190"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_id" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.38;strokeColor=#7FFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_id" target="proc_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="190" y="220"/>
+                            <mxPoint x="190" y="290"/>
+                            <mxPoint x="430" y="290"/>
+                            <mxPoint x="430" y="219"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rx_ready" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#FFFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rx_ready" target="proc_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="180" y="260"/>
+                            <mxPoint x="180" y="310"/>
+                            <mxPoint x="440" y="310"/>
+                            <mxPoint x="440" y="250"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rx_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.62;strokeColor=#A020F0;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rx_data" target="proc_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="170" y="300"/>
+                            <mxPoint x="170" y="330"/>
+                            <mxPoint x="450" y="330"/>
+                            <mxPoint x="450" y="281"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_w_win" value="w_win (得分脈衝)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1.002;exitY=0.368;entryX=0;entryY=0.39;strokeColor=#33CCFF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#33CCFF;fontSize=10;exitDx=0;exitDy=0;exitPerimeter=0;" parent="1" source="proc_fsm" target="proc_score" edge="1">
+                    <mxGeometry x="0.2463" y="-20" relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="670" y="216"/>
+                            <mxPoint x="670" y="220"/>
+                        </Array>
+                        <mxPoint as="offset"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_w_score" value="w_scoreL, w_scoreR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0;exitY=0.72;entryX=1;entryY=0.69;strokeColor=#33FF33;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#33FF33;fontSize=10;" parent="1" source="proc_score" target="proc_fsm" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="660" y="280"/>
+                            <mxPoint x="660" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_w_gameover" value="w_gameOver" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.85;entryX=0;entryY=0.89;strokeColor=#FF00FF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#FF00FF;fontSize=10;" parent="1" source="proc_fsm" target="proc_score" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="680" y="341"/>
+                            <mxPoint x="680" y="310"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_tx_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.12;entryX=0;entryY=0.5;strokeColor=#B3E5FC;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="proc_fsm" target="pin_tx_start" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="650" y="151"/>
+                            <mxPoint x="650" y="90"/>
+                            <mxPoint x="860" y="90"/>
+                            <mxPoint x="860" y="120"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_tx_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.23;entryX=0;entryY=0.5;strokeColor=#FF8000;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="proc_fsm" target="pin_tx_data" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="660" y="180"/>
+                            <mxPoint x="660" y="95"/>
+                            <mxPoint x="890" y="95"/>
+                            <mxPoint x="890" y="160"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_state" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.92;entryX=0;entryY=0.5;strokeColor=#FF00FF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="proc_fsm" target="pin_state" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="670" y="359"/>
+                            <mxPoint x="670" y="390"/>
+                            <mxPoint x="890" y="390"/>
+                            <mxPoint x="890" y="210"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_scoreL" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#33FF33;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="proc_score" target="pin_scoreL" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="900" y="240"/>
+                            <mxPoint x="900" y="260"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_scoreR" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.72;entryX=0;entryY=0.5;strokeColor=#FF9933;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="proc_score" target="pin_scoreR" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="910" y="280"/>
+                            <mxPoint x="910" y="300"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="pin_clk" value="i_clk" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="40" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_clk_deb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.3;strokeColor=#FFFFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_clk" target="proc_debounce" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="110" y="50"/>
+                            <mxPoint x="110" y="207"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

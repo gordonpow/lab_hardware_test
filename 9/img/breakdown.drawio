@@ -1,0 +1,168 @@
+<mxfile host="65bd71144e">
+    <diagram id="breakdown_diagram" name="Breakdown 階層分解圖">
+        <mxGraphModel dx="1286" dy="1158" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1653" pageHeight="1169" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="node_top" value="雙板乒乓球遊戲頂層&lt;br/&gt;(pingpong_double)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FF0000;strokeColor=#000000;strokeWidth=2;fontColor=#ffffff;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="558" y="40" width="120" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_clk" value="時脈分頻模組&lt;br/&gt;(clkDivider)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66BB6A;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="45" y="140" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_ctrl" value="板端控制器&lt;br/&gt;(boardController)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66BB6A;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="275" y="140" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_link" value="雙板通訊收發器&lt;br/&gt;(linkTransceiver)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66BB6A;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="620" y="140" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_disp" value="顯示與計分管理器&lt;br/&gt;(displayManager)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#66BB6A;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="965" y="140" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_clk_gen" value="時脈產生 Process&lt;br/&gt;(CLK_GEN)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="50" y="280" width="100" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_key_deb" value="按鍵去彈跳 Process&lt;br/&gt;(KEY_DEBOUNCE)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="165" y="280" width="100" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_fsm_ctrl" value="主狀態機 Process&lt;br/&gt;(FSM_CTRL)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="280" y="280" width="100" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_score_cnt" value="得分計數 Process&lt;br/&gt;(SCORE_CNT)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="395" y="280" width="100" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_tx_gen" value="傳送脈衝 Process&lt;br/&gt;(TX_GEN)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="510" y="280" width="100" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_rx_det" value="接收偵測 Process&lt;br/&gt;(RX_DET)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="625" y="280" width="100" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_tri_ctrl" value="三態控制 Process&lt;br/&gt;(TRI_CTRL)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="740" y="280" width="100" height="35" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_led_drv" value="LED燈位驅動 Process&lt;br/&gt;(LED_DRV)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="855" y="280" width="105" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_score_drv" value="分數顯示驅動 Process&lt;br/&gt;(SCORE_DRV)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="965" y="280" width="110" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="node_led_mux" value="LED多工選擇 Process&lt;br/&gt;(LED_MUX)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#29B6F6;strokeColor=#000000;strokeWidth=1.5;fontColor=#000000;fontSize=11;" parent="1" vertex="1">
+                    <mxGeometry x="1080" y="280" width="105" height="40" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_top_clk" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#66BB6A;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_top" target="node_clk" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="100" y="140" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="618" y="110"/>
+                            <mxPoint x="100" y="110"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_top_ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#66BB6A;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_top" target="node_ctrl" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="330" y="140" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="618" y="110"/>
+                            <mxPoint x="330" y="110"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_top_link" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#66BB6A;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_top" target="node_link" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="675" y="140" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="618" y="110"/>
+                            <mxPoint x="675" y="110"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_top_disp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#66BB6A;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_top" target="node_disp" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1020" y="140" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="618" y="110"/>
+                            <mxPoint x="1020" y="110"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_clk_clk_gen" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_clk" target="node_clk_gen" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_ctrl_key_deb" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_ctrl" target="node_key_deb" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="215" y="280" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="330" y="240"/>
+                            <mxPoint x="215" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_ctrl_fsm_ctrl" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_ctrl" target="node_fsm_ctrl" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_ctrl_score_cnt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_ctrl" target="node_score_cnt" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="445" y="280" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="330" y="240"/>
+                            <mxPoint x="445" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_link_tx_gen" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_link" target="node_tx_gen" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="560" y="280" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="675" y="240"/>
+                            <mxPoint x="560" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_link_rx_det" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_link" target="node_rx_det" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_link_tri_ctrl" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_link" target="node_tri_ctrl" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="790" y="280" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="675" y="240"/>
+                            <mxPoint x="790" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_disp_score_drv" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_disp" target="node_score_drv" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="3" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="node_disp" target="node_score_drv" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1020" y="180" as="sourcePoint"/>
+                        <mxPoint x="1020" y="280" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1020" y="220"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="5" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;exitDx=0;exitDy=0;" parent="1" source="node_disp" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="1132.33" y="180" as="sourcePoint"/>
+                        <mxPoint x="1132.33" y="280" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1020" y="240"/>
+                            <mxPoint x="1132" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="8" style="edgeStyle=none;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#29B6F6;strokeWidth=2;endArrow=classic;endFill=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="node_disp">
+                    <mxGeometry relative="1" as="geometry">
+                        <mxPoint x="907.33" y="180" as="sourcePoint"/>
+                        <mxPoint x="907.33" y="280" as="targetPoint"/>
+                        <Array as="points">
+                            <mxPoint x="1020" y="240"/>
+                            <mxPoint x="907" y="240"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>

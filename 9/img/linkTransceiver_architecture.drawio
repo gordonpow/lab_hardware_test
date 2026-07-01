@@ -1,0 +1,147 @@
+<mxfile host="65bd71144e">
+    <diagram id="linktransceiver_diagram" name="雙板通訊收發器架構圖">
+        <mxGraphModel dx="1822" dy="1640" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1169" pageHeight="827" background="#000000" math="0" shadow="0">
+            <root>
+                <mxCell id="0"/>
+                <mxCell id="1" parent="0"/>
+                <mxCell id="sub_module" value="雙板通訊收發器 (linkTransceiver)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#262600;strokeColor=#FFFF00;strokeWidth=3;fontColor=#FFFF00;align=left;verticalAlign=top;spacingLeft=15;spacingTop=15;fontSize=14;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="100" y="50" width="680" height="450" as="geometry"/>
+                </mxCell>
+                <mxCell id="proc_tx" value="傳送脈衝 Process&lt;br/&gt;(TX_GEN)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFFF99;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="180" y="120" width="180" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="proc_rx" value="接收偵測 Process&lt;br/&gt;(RX_DET)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#FFCC99;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="460" y="120" width="180" height="180" as="geometry"/>
+                </mxCell>
+                <mxCell id="block_tri" value="三態控制 Process&lt;br/&gt;(TRI_CTRL)" style="rounded=0;whiteSpace=wrap;html=1;fillColor=#A9DFBF;strokeColor=#000000;strokeWidth=2;fontColor=#000000;fontSize=12;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="320" y="340" width="180" height="80" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_slow_clk" value="i_slowClk" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#00FFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="70" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rst" value="i_rst" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF3333;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="20" y="110" width="60" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_id" value="i_boardId" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#7FFF00;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="150" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_tx_start" value="i_txStart" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF8000;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="200" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_tx_data" value="i_txData" style="text;html=1;strokeColor=none;fillColor=none;align=right;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FF8000;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="10" y="240" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rx_ready" value="o_rxReady" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#FFFF00;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="800" y="140" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_rx_data" value="o_rxData" style="text;html=1;strokeColor=none;fillColor=none;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#66FFB3;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="800" y="180" width="70" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="pin_io" value="io_line (共享雙向通訊線)" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontColor=#00BFFF;fontSize=11;fontStyle=1" parent="1" vertex="1">
+                    <mxGeometry x="310" y="520" width="200" height="20" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_slow_clk_tx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.08;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_slow_clk" target="proc_tx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="140" y="80"/>
+                            <mxPoint x="140" y="134"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_slow_clk_rx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.08;strokeColor=#00FFFF;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_slow_clk" target="proc_rx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="140" y="80"/>
+                            <mxPoint x="140" y="100"/>
+                            <mxPoint x="430" y="100"/>
+                            <mxPoint x="430" y="134"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rst_tx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.25;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="proc_tx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="150" y="120"/>
+                            <mxPoint x="150" y="165"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rst_rx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.25;strokeColor=#FF3333;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_rst" target="proc_rx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="150" y="120"/>
+                            <mxPoint x="150" y="110"/>
+                            <mxPoint x="440" y="110"/>
+                            <mxPoint x="440" y="165"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_id_tx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.42;strokeColor=#7FFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_id" target="proc_tx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="160" y="160"/>
+                            <mxPoint x="160" y="196"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_id_rx" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.42;strokeColor=#7FFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_id" target="proc_rx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="160" y="160"/>
+                            <mxPoint x="160" y="90"/>
+                            <mxPoint x="400" y="90"/>
+                            <mxPoint x="400" y="196"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_tx_start" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.58;strokeColor=#FF8000;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_tx_start" target="proc_tx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="165" y="210"/>
+                            <mxPoint x="165" y="224"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_tx_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.75;strokeColor=#FF8000;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="pin_tx_data" target="proc_tx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="165" y="250"/>
+                            <mxPoint x="165" y="255"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rx_ready" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.25;entryX=0;entryY=0.5;strokeColor=#FFFF00;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="proc_rx" target="pin_rx_ready" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_rx_data" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=1;exitY=0.5;entryX=0;entryY=0.5;strokeColor=#66FFB3;strokeWidth=2;endArrow=classic;endFill=1;" parent="1" source="proc_rx" target="pin_rx_data" edge="1">
+                    <mxGeometry relative="1" as="geometry"/>
+                </mxCell>
+                <mxCell id="edge_tx_drive" value="r_txPulse_r (發送脈衝)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.25;entryY=0;strokeColor=#33CCFF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#33CCFF;fontSize=9;" parent="1" source="proc_tx" target="block_tri" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="270" y="320"/>
+                            <mxPoint x="365" y="320"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_rx_read" value="w_rxVal_r (接收監聽)" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;entryX=0.5;exitY=0;strokeColor=#33CCFF;strokeWidth=2;endArrow=classic;endFill=1;verticalAlign=bottom;labelBackgroundColor=none;fontColor=#33CCFF;fontSize=10;exitX=0.75;exitDx=0;exitDy=0;" parent="1" source="block_tri" target="proc_rx" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="455" y="320"/>
+                            <mxPoint x="550" y="320"/>
+                        </Array>
+                        <mxPoint x="460" y="340" as="sourcePoint"/>
+                    </mxGeometry>
+                </mxCell>
+                <mxCell id="edge_tri_io" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;exitX=0.5;exitY=1;entryX=0.5;entryY=0;strokeColor=#00BFFF;strokeWidth=2;endArrow=classic;startArrow=classic;endFill=1;startFill=1;" parent="1" source="block_tri" target="pin_io" edge="1">
+                    <mxGeometry relative="1" as="geometry">
+                        <Array as="points">
+                            <mxPoint x="410" y="440"/>
+                            <mxPoint x="410" y="490"/>
+                        </Array>
+                    </mxGeometry>
+                </mxCell>
+            </root>
+        </mxGraphModel>
+    </diagram>
+</mxfile>
